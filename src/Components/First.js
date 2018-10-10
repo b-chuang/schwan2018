@@ -7,7 +7,33 @@ export default class Test extends Component {
     super(props);
     // Set initial state
     this.state = {
-      // State needed
+
       post: []
     };
   }
+  componentDidMount() {
+    this.fetchPost();
+  }
+
+  fetchPost() {
+
+    fetch('https://swapi.co/api/people/1')
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({
+          post: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  render() {
+      <h1> ...loading </h1>
+  }
+}
+
+export default First;
