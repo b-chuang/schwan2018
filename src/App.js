@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './Resources/pageOne';
+/* import './Resources/pageOne'; */
+
+import First from '../Components/First'
+
 
 class App extends Component {
   render() {
@@ -9,9 +12,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
          <h1>Hello</h1>
-          <pageOne />
-          console.log(pageOne)
-          
+          <First />
+
         </header>
       </div>
     );
