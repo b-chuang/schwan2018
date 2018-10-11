@@ -1,64 +1,71 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+/* import logoReact from './logo.svg'; */
 import './App.css';
-
-import axios from "axios";
-
-const url = "https://s3.amazonaws.com/flipgive-developer-test/base.json";
 
 
 class App extends Component {
   constructor() {
-    console.log('constructor was called');
+    console.log("constructor was called");
     super();
+    this.state = {
+      campaigns: [],
+      categories: [],
+      error: null
+    };
   }
 
-  componentDidMount() {//when the data arrived on the page
-    //ok go ahead and get us the data
-    console.log('component did mount was called');
-
-    /* axios.get(url, {
-      params: { //params same as data in jquery
-        key: [],
-      }
-    }).then((res) => {
-      this.setState({
-       /*  people: res.data.operations // res.data.operations this is how to get into API object. people in operations, and sets them as state
-        /* console.log(res);
-      });
-    }); */
-    fetch("https://s3.amazonaws.com/flipgive-developer-test/base.json")
+  //BASE FETCH
+  getCampaign() {
+    return fetch("https://s3.amazonaws.com/flipgive-developer-test/base.json")
       .then(response => {
         return response.json();
       })
       .then(data => {
-        // Work with JSON data here
+        /* console.log(data.campaigns[0]); */
         console.log(data);
+        this.setState({campaigns: data})
       })
-      .catch(err => {
-        // Do something for an error here
+
+      .catch(error => {
+        console.log("error occured while fetching entries");
+        console.log(error); // Do something for an error here
       });
-
-
-    fetch('https://s3.amazonaws.com/flipgive-developer-test/page2.json').then(response => {
-      return response.json();
-    }).then(data => {
-      // Work with JSON data here
-      console.log(data);
-    }).catch(err => {
-      // Do something for an error here
-    });
   }
 
+  //PAGE2 CATEGORIES FETCH
+  getCategory() {
+    return fetch("https://s3.amazonaws.com/flipgive-developer-test/page2.json")
+      .then(response => {
+        return response.json();
+      })
+
+      .then(data => {
+        console.log(data);
+        this.setState({ categories: data })
+      })
+
+      .catch(error => {
+        console.log("error occured while fetching entries");
+        console.log(error); // Do something for an error here
+      });
+  }
+
+  componentDidMount() {
+    this.getCampaign();
+    this.getCategory();
+    console.log("component did mount was called");
+  }
 
   render() {
-    return (
-      <div className="App">
+    return <div className="App">
         <header className="App-header">
           <h1>Hello Test</h1>
+            <img src={this.state.logo} alt="" />
         </header>
-      </div>
-    );
+
+        
+
+      </div>;
   }
 };
 
