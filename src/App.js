@@ -8,8 +8,8 @@ class App extends Component {
     console.log("constructor was called");
     super();
     this.state = {
-      campaigns: [],
-      categories: [],
+      campaigns: '',
+      categories: '',
       error: null
     };
   }
@@ -21,9 +21,10 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        /* console.log(data.campaigns[0]); */
+        console.log(data.campaigns[0]);
         console.log(data);
-        this.setState({campaigns: data})
+       /*  this.setState({ 'campaigns': data.campaigns[0]}) */
+        this.setState(data)
       })
 
       .catch(error => {
@@ -38,10 +39,9 @@ class App extends Component {
       .then(response => {
         return response.json();
       })
-
       .then(data => {
         console.log(data);
-        this.setState({ categories: data })
+        this.setState(data)
       })
 
       .catch(error => {
@@ -57,13 +57,24 @@ class App extends Component {
   }
 
   render() {
+
+    const camps = this.state.campaigns;
     return <div className="App">
         <header className="App-header">
           <h1>Hello Test</h1>
-            <img src={this.state.logo} alt="" />
+           <img src={this.state.logo} alt="schwan company logo of a swan" />
         </header>
 
+        <div className="App">
+          {Object.keys(camps).map((key) => (
+            <span>{key}</span>
+          ))}
+        </div>
+
+
         
+
+
 
       </div>;
   }
