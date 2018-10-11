@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 /* import logoReact from './logo.svg'; */
 import './App.css';
+import NavBar from './Components/NavBar';
+import Album from './Components/Album';
+import Pricing from './Components/Pricing';
+import Stepper from './Components/Stepper';
+/* import Title from './Components/Title'; */
 
 
 class App extends Component {
@@ -8,8 +13,8 @@ class App extends Component {
     console.log("constructor was called");
     super();
     this.state = {
-      campaigns: '',
-      categories: '',
+      pageOne: '',
+      pageTwo: '',
       error: null
     };
   }
@@ -21,10 +26,7 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        console.log(data.campaigns[0]);
-        console.log(data);
-       /*  this.setState({ 'campaigns': data.campaigns[0]}) */
-        this.setState(data)
+        this.setState({ pageOne: data })
       })
 
       .catch(error => {
@@ -40,8 +42,7 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        console.log(data);
-        this.setState(data)
+        this.setState({ pageTwo : data })
       })
 
       .catch(error => {
@@ -55,28 +56,52 @@ class App extends Component {
     this.getCategory();
     console.log("component did mount was called");
   }
-
+  
   render() {
+    /* console.log("what is state", this.state); */
 
-    const camps = this.state.campaigns;
+    
     return <div className="App">
-        <header className="App-header">
-          <h1>Hello Test</h1>
-           <img src={this.state.logo} alt="schwan company logo of a swan" />
-        </header>
+        <NavBar />
+          <header className="App-header">
+            <h1 align="center" className="campHeader">Campaign</h1>
+            {/* <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
+            className="swanLogo" /> */}
+          <Stepper />
+            <img 
+            src="https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=300" />
+          
+          </header>
 
-        <div className="App">
-          {Object.keys(camps).map((key) => (
-            <span>{key}</span>
-          ))}
+
+        <Album />
+        <Pricing />
+
+        <div className="teamCampagin">
+
+         {/*  <div className="teamCampaign__Image">
+          
+            {this.state.pageOne.campaigns.map((campaign) => {
+              return (
+                <div>
+                  <img src={campaign.image} />
+                </div>
+                )
+              })
+            }
+          </div> */}
+
+          <div className="teamCampaign__Goal">
+          </div>
+
+
         </div>
 
 
-        
 
 
+      </div>
 
-      </div>;
   }
 };
 
