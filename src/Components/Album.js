@@ -124,18 +124,18 @@ function Album(props) {
                                     <CardContent className={classes.cardContent}>
                                         <Typography gutterBottom variant="h5" component="h2">
                                             Heading
-                    </Typography>
+                                        </Typography>
                                         <Typography>
                                             This is a media card. You can use this section to describe the content.
-                    </Typography>
+                                        </Typography>
                                     </CardContent>
                                     <CardActions>
                                         <Button size="small" color="primary">
                                             Earn 20% cash back
-                    </Button>
+                                        </Button>
                                         <Button size="small" color="primary">
                                             Buy
-                    </Button>
+                                        </Button>
                                     </CardActions>
                                 </Card>
                             </Grid>

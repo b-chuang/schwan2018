@@ -48,20 +48,23 @@ const styles = {
 function ButtonAppBar(props) {
   const { classes } = props;
   return <div className={classes.root}>
-    <AppBar 
-      position="static" style={{ backgroundColor: "#d22030"}}
-      >
+      <AppBar position="static" style={{ backgroundColor: "#d22030" }}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-         {/*  <MenuIcon>
+          {/*  <MenuIcon>
             <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
             className="swanLogo" />
           </MenuIcon>  */}
           <Typography align="center" variant="h6" color="inherit" className={classes.grow}>
             Highland Community Middle School Project Fund
           </Typography>
+          <IconButton className="socialIcon" color="inherit">
+            <i class="fab fa-twitter" />
+            <i class="fab fa-facebook-f" />
+            <i class="fab fa-instagram"></i>
+          </IconButton>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

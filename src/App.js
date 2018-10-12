@@ -14,8 +14,8 @@ class App extends Component {
     console.log("constructor was called");
     super();
     this.state = {
-      pageOne: '',
-      pageTwo: '',
+      pageOne: [],
+      pageTwo: [],
       error: null
     };
   }
@@ -27,9 +27,15 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        this.setState({ pageOne: data })
-      })
+        console.log(data);
 
+
+
+        this.setState({ pageOne: data })
+
+        this.setState({ pageOne: data });
+
+      })
       .catch(error => {
         console.log("error occured while fetching entries");
         console.log(error); // Do something for an error here
@@ -43,6 +49,7 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
+        console.log(data);
         this.setState({ pageTwo : data })
       })
 
@@ -59,21 +66,24 @@ class App extends Component {
   }
   
   render() {
-    /* console.log("what is state", this.state); */
+    console.log("what is state", this.state.pageOne);
 
     
     return <div className="App">
         <NavBar />
           <header className="App-header">
             <h1 align="center" className="campHeader">Campaign</h1>
-            {/* <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
+            
+          {/*   <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
             className="swanLogo" /> */}
-           
-
+          
             <CardContent align="center">
               <img 
-              src="https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
+              src="
+              https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
             </CardContent>
+
+
 
             <Stepper align="center" />
           {/* Include a stepper to show progress, give more information to supporters */}
