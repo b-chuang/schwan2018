@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
     root: {
         width: '90%',
+        marginLeft: "70px",
     },
     button: {
         marginRight: theme.spacing.unit,
@@ -169,7 +170,7 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
                         const props = {};
                         const buttonProps = {};
                         if (this.isStepOptional(index)) {
-                            buttonProps.optional = <Typography variant="caption">Optional</Typography>;
+                            buttonProps.optional = <Typography variant="caption">Next Goal</Typography>;
                         }
                         if (this.isStepSkipped(index)) {
                             props.completed = false;

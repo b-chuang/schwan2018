@@ -83,16 +83,16 @@ function Album(props) {
                 <div className={classes.heroUnit}>
                     <div className={classes.heroContent}>
                         <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-                            Cash back for the team!
+                            Earn cash back for the team!
             </Typography>
                         <Typography variant="h6" align="center" color="textSecondary" paragraph>
                             Purchase quality food produce from these brands and get cash back to help the cause. Seasonal bundles receive more discounts.
                             <br/>
 
-                            1) 4 items + 1  = earn over $21 for cause<br/>
+                          {/*   1) 4 items + 1  = earn over $21 for cause<br/>
                             2) 4 items + 2 = earn over $12 for cause <br/>
                             3) 4 items + 1 = earn over $10 for cause <br/>
-                        
+                         */}
             </Typography>
                         <div className={classes.heroButtons}>
                             <Grid container spacing={16} justify="center">
@@ -131,10 +131,10 @@ function Album(props) {
                                     </CardContent>
                                     <CardActions>
                                         <Button size="small" color="primary">
-                                            View
+                                            Earn 20% cash back
                     </Button>
                                         <Button size="small" color="primary">
-                                            Edit
+                                            Buy
                     </Button>
                                     </CardActions>
                                 </Card>

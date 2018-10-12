@@ -63,38 +63,43 @@ const styles = theme => ({
 });
 
 const tiers = [
+    {
+        title: "Burger Grill Meal",
+        price: "52.95",
+        description: [
+            "Burger",
+            "Hot Dog",
+            "Fish",
+            "Ice Cream",
+            
+            "•Earn $10 cash back"
+        ],
+        buttonText: "Shop Now",
+        buttonVariant: "contained"
+    },
+    {
+        title: "Premium Collection",
+        subheader: "Most popular",
+        price: "108.95",
+        description: [
+            "Ice Cream",
+            "Ice Cream Pie",
+            "Ice Cream Cone",
+            "Ice Cream Bar",
+            "•Earn $21 cash back"
+        ],
+        buttonText: "Shop Now",
+        buttonVariant: "contained"
+    },
   {
     title: "Top Selling Treats",
     price: "63.44",
-    description: ["Seafood", "Poultry", "Meat", "Meat"],
+        description: ["Seafood", "Poultry", "Beef", "Veal", "•Earn $12 cash back"],
     buttonText: "Shop Now",
-    buttonVariant: "outlined"
-  },
-  {
-    title: "Premium Collection",
-    subheader: "Most popular",
-    price: "108.95",
-    description: [
-      "Ice Cream",
-      "Ice Cream Pie",
-      "Ice Cream Cone",
-      "Ice Cream Bar"
-    ],
-    buttonText: "Shop Now",
+    /* buttonVariant: "outlined", */
     buttonVariant: "contained"
-  },
-  {
-    title: "Burger & Brat Grill Meal",
-    price: "52.95",
-    description: [
-      "Burger",
-      "Hot Dog",
-      "Fish",
-      "Ice Cream"
-    ],
-    buttonText: "Shop Now",
-    buttonVariant: "outlined"
   }
+  
 ];
 const footers = [
     {
@@ -128,7 +133,7 @@ function Pricing(props) {
                     </Typography>
                 </div>
                 {/* End hero unit */}
-                <Grid container spacing={40} alignItems="flex-end">
+                <Grid container spacing={40} alignItems="center">
                     {tiers.map(tier => (
                         // Enterprise card is full width at sm breakpoint
                         <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
@@ -147,7 +152,7 @@ function Pricing(props) {
                                             ${tier.price}
                                         </Typography>
                                         <Typography variant="h6" color="textSecondary">
-                                            /+1 item
+                                            Total
                                         </Typography>
                                     </div>
                                     {tier.description.map(line => (

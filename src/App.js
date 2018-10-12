@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar';
 import Album from './Components/Album';
 import Pricing from './Components/Pricing';
 import Stepper from './Components/Stepper';
+import { CardContent } from '@material-ui/core';
 /* import Title from './Components/Title'; */
 
 
@@ -67,9 +68,16 @@ class App extends Component {
             <h1 align="center" className="campHeader">Campaign</h1>
             {/* <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
             className="swanLogo" /> */}
-          <Stepper />
-            <img 
-            src="https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=300" />
+           
+
+            <CardContent align="center">
+              <img 
+              src="https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
+            </CardContent>
+
+            <Stepper align="center" />
+          {/* Include a stepper to show progress, give more information to supporters */}
+
           
           </header>
 
@@ -90,9 +98,6 @@ class App extends Component {
               })
             }
           </div> */}
-
-          <div className="teamCampaign__Goal">
-          </div>
 
 
         </div>
