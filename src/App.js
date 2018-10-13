@@ -29,7 +29,7 @@ class App extends Component {
       .then(data => {
         console.log(data);
 
-        let campaigns = data.val();
+        let campaigns = data.campaigns;
         let newState = [];
 
         for (let campaign in campaigns) {
@@ -111,7 +111,7 @@ class App extends Component {
           )
         })}
 
-         {/* /*  <div className="teamCampaign__Image">
+         {/*  <div className="teamCampaign__Image">
           
             {this.state.pageOne.campaigns.map((campaign) => {
               return (
@@ -130,7 +130,7 @@ class App extends Component {
 
 
       </div>
-
+        
   }
 };
 
