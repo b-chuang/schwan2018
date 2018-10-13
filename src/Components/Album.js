@@ -130,10 +130,10 @@ function Album(props) {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small" color="primary">
+                                        <Button variant="outlined" size="small" color="primary">
                                             Earn 20% cash back
                                         </Button>
-                                        <Button size="small" color="primary">
+                                        <Button variant="contained" size="small" color="primary">
                                             Buy
                                         </Button>
                                     </CardActions>

@@ -77,7 +77,7 @@ class App extends Component {
           {/*   <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
             className="swanLogo" /> */}
           
-            <CardContent align="center">
+            <CardContent align="center" className="campHeader">
               <img 
               src="
               https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
