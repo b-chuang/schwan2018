@@ -29,11 +29,16 @@ class App extends Component {
       .then(data => {
         console.log(data);
 
+        let campaigns = data.val();
+        let newState = [];
 
-
+        for (let campaign in campaigns) {
+          newState.push ({
+            id : campaigns,
+            campaign:campaigns
+          });
+        }
         this.setState({ pageOne: data })
-
-        this.setState({ pageOne: data });
 
       })
       .catch(error => {
