@@ -28,17 +28,7 @@ class App extends Component {
       })
       .then(data => {
         console.log(data);
-
-        let campaigns = data.campaigns;
-        let newState = [];
-
-        for (let campaign in campaigns) {
-          newState.push ({
-            id : campaigns,
-            campaign:campaigns
-          });
-        }
-        this.setState({ pageOne: data })
+        this.setState({ pageOne: data.campaigns })
 
       })
       .catch(error => {
@@ -73,7 +63,7 @@ class App extends Component {
   render() {
     console.log("what is state", this.state.pageOne);
 
-    
+    const camps = this.state.pageOne;    
     return <div className="App">
         <NavBar />
           <header className="App-header">
@@ -100,28 +90,35 @@ class App extends Component {
         <Album />
         <Pricing />
 
-        <div className="teamCampagin">
+        <div className="teamCampaign">
 
-        {/* {this.state.pageOne.map((campaign) => {
+        {Object.keys(camps).map((key) => (
+          <span>{key}</span>
+        ))}
+
+        
+
+        {this.state.pageOne.map((d) => {
           return (
             <div>
-              <h3>{campaign.title}</h3>
-              <h3>{campaign.title}</h3>
+              <span>{d[0]}</span>
+              <h3>{d.image}</h3>
             </div>
           )
-        })} */}
+        })}
 
-         {/*  <div className="teamCampaign__Image">
+          <div className="teamCampaign__Image">
           
-            {this.state.pageOne.campaigns.map((campaign) => {
+            {this.state.pageOne.map((campaign) => {
               return (
                 <div>
+                  <h2>{campaign.title}</h2>
                   <img src={campaign.image} />
                 </div>
                 )
               })
             }
-          </div> */}
+          </div>
 
 
         </div>
