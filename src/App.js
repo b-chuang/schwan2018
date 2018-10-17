@@ -69,8 +69,8 @@ class App extends Component {
           <header className="App-header">
             <h1 align="center" className="campHeader">Campaign</h1>
             
-          {/*   <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
-            className="swanLogo" /> */}
+          <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
+            className="swanLogo" />
           
             <CardContent align="center" className="campHeader">
               <img 
@@ -101,7 +101,7 @@ class App extends Component {
         {this.state.pageOne.map((d) => {
           return (
             <div>
-              <span>{d[0]}</span>
+              <span>{d[1]}</span>
               <h3>{d.image}</h3>
             </div>
           )
@@ -122,10 +122,6 @@ class App extends Component {
 
 
         </div>
-
-
-
-
       </div>
         
   }
