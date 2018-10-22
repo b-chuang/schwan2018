@@ -1,27 +1,3 @@
-/* import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-
-
-const NavBar = () => {
-
-
-    return <div>
-        <AppBar position="static" style={{ backgroundColor: "#d22030" 
-        }}>
-          <Toolbar>
-            <Typography variant="title" color="inherit">
-              Highland Community Middle School Project Fund
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>;
-}
-export default NavBar;
- */
-
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
