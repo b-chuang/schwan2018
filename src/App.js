@@ -118,6 +118,17 @@ class App extends Component {
             }
           </div>
 
+        <div className="teamCampaign__Image">
+
+          {this.state.pageOne.map((campaign) => {
+            return <div>
+              <h2>{campaign.title}</h2>
+              <img src={campaign.image} />
+            </div>;
+          })
+          }
+        </div>
+
 
         </div>
       </div>
