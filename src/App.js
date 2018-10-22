@@ -66,72 +66,64 @@ class App extends Component {
     const camps = this.state.pageOne;    
     return <div className="App">
         <NavBar />
-          <header className="App-header">
-            <h1 align="center" className="campHeader">Campaign</h1>
-            
-          <img src={this.state.pageOne.logo} alt="schwan company logo of a swan"
-            className="swanLogo" />
-          
-            <CardContent align="center" className="campHeader">
-              <img 
-              src="
+        <header className="App-header">
+          <h1 align="center" className="campHeader">
+            Campaign
+          </h1>
+
+          <img src={this.state.pageOne.logo} alt="schwan company logo of a swan" className="swanLogo" />
+
+          <CardContent align="center" className="campHeader">
+            <img src="
               https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
-            </CardContent>
+          </CardContent>
 
+          <CardContent align="center" className="campHeader">
+            <img src="
+              https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
+          </CardContent>
 
+          <CardContent align="center" className="campHeader">
+            <img src="
+              https://schwans-prod.imgix.net/images/campaigns/photos/000/041/287/width_800/1536238305DSC02778.JPG?ch=Width%2CDPR%2CSave-Data&auto=format%2Ccompress&dpr=2&w=350" />
+          </CardContent>
 
-            <Stepper align="center" />
+          <Stepper align="center" />
           {/* Include a stepper to show progress, give more information to supporters */}
-
-          
-          </header>
-
+        </header>
 
         <Album />
         <Pricing />
 
         <div className="teamCampaign">
+          {Object.keys(camps).map(key => <span>{key}</span>)}
 
-        {Object.keys(camps).map((key) => (
-          <span>{key}</span>
-        ))}
-
-        
-
-        {this.state.pageOne.map((d) => {
-          return (
-            <div>
-              <span>{d[1]}</span>
-              <h3>{d.image}</h3>
-            </div>
-          )
-        })}
+          {this.state.pageOne.map(d => {
+            return <div>
+                <span>{d[1]}</span>
+                <h3>{d.image}</h3>
+              </div>;
+          })}
 
           <div className="teamCampaign__Image">
-          
-            {this.state.pageOne.map((campaign) => {
+            {this.state.pageOne.map(campaign => {
               return <div>
                   <h2>{campaign.title}</h2>
                   <img src={campaign.image} />
                 </div>;
-              })
-            }
+            })}
           </div>
 
-        <div className="teamCampaign__Image">
-
-          {this.state.pageOne.map((campaign) => {
-            return <div>
-              <h2>{campaign.title}</h2>
-              <img src={campaign.image} />
-            </div>;
-          })
-          }
+          <div className="teamCampaign__Image">
+            {this.state.pageOne.map(campaign => {
+              return <div>
+                  <h2>{campaign.title}</h2>
+                  <img src={campaign.image} />
+                </div>;
+            })}
+          </div>
         </div>
-
-
-        </div>
-      </div>
+      </div>;
         
   }
 };
